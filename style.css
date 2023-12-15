@@ -5,77 +5,105 @@
 }
 
 body {
-  font-family: 'Fragment Mono', monospace;
+  font-family: "Fragment Mono", monospace;
   background-color: #fff;
   color: #2d2d31;
-  min-height: 100vh;
-}
-header{
-  padding: 20px;
-}
-header, header ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
-header ul{
-    gap: 20px;
+header {
+  padding: 20px;
+  border-bottom: 1px solid grey;
 }
-hr{
-  height: 1px;
+
+header,
+header ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
+
+header ul {
+  gap: 20px;
+}
+header li:hover{
+  color: #db3d32;
+}
+
 /* .wrapper {
   margin: 0 20px;
   display: grid;
   height: 100%;
 } */
 
-
 /* no grid support? */
 
 .wrapper {
   display: flex;
+  min-height: 100vh;
   flex-wrap: wrap;
-  
 }
 
 .wrapper {
   display: grid;
   margin: 0 auto;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: auto;
-  min-height: 100%;
+  grid-auto-rows: min-content 1fr min-content;
 }
 
-main{
-    padding: 30px;
-    grid-column: 1/-1;
-    min-height: 100%;
-    align-self: stretch;
-
+main {
+  padding: 30px;
+  grid-column: 1/-1;
+  min-height: 100%;
+  align-self: stretch;
+  justify-self: stretch;
 }
 .panel {
+  display: fl;
   margin-left: 5px;
   margin-right: 5px;
   flex: 1;
-  border: 3px solid hsl(4, 50%, 30%);;
+  border: 3px solid hsl(4, 50%, 30%);
   border-radius: 10px;
   max-width: 50vw;
   margin: 0 auto;
   padding: 10px;
   background-color: black;
   margin-top: 30px;
-
+  position: relative;
 }
 
-.panel p{
-    font-size: 13px;
+.panel p {
+  font-size: 13px; 
 }
-.panel:hover{
-    box-shadow: 0 0 30px 5px #db3d32;
-    border: 3px solid #db3d32;
-} 
+.zajawka{
+  margin-bottom: 40px;
+}
+
+.panel:hover {
+  box-shadow: 0 0 30px 5px #db3d32;
+  border: 3px solid #db3d32;
+}
+.button{
+  font-size: 13px;
+  padding: 7px;
+  border: solid 1px white;
+  border-radius: 5px;
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+}
+
+.button:hover{
+  border: solid 1px #db3d32;
+  color: #db3d32;
+}
+.panel h3{
+  color: #db3d32;
+}
+.footer {
+  border-top: 1px solid grey;
+}
+
 .header,
 .footer {
   margin-left: 5px;
@@ -84,7 +112,8 @@ main{
   grid-column: 1 / -1;
   padding: 15px;
 }
-.footer p{
+
+.footer p {
   text-align: center;
   font-size: 14px;
 }
@@ -94,9 +123,7 @@ main{
   color: #fff;
   font-size: 150%;
   margin-bottom: 10px;
-
 }
-
 
 /* We need to set the margin used on flex items to d0 as we have gaps in grid.  */
 
@@ -104,4 +131,30 @@ main{
   .wrapper > * {
     margin: 0;
   }
+}
+
+/* Stylowanie post */
+.post p{
+  font-size: 14px;
+  margin: 15px 0px;
+}
+
+.post{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.post img{
+  align-items: center;
+  margin: auto;
+  display: block;
+}
+
+a span{
+  color: #db3d32;
+}
+
+.title{
+  text-align: center;
+  font-size: 2em;
+  color: #db3d32;
 }
