@@ -1,12 +1,27 @@
 import os
 import re
+import time
+from datetime import datetime
 
 files = os.listdir()
 # print(files)
 posts = []
+postsDisctionary = {}
 for file in files:
     if re.search("Post*", file):
         posts.append(file)
+        
+for nazwa_pliku in posts:
+    with open(nazwa_pliku, 'r') as plik:
+        pierwsza_linijka = plik.readline().strip()  # Odczytaj pierwszą linijkę
+        x = pierwsza_linijka.replace("<!-- ", "")
+        y = x.replace(' -->','')
+        date = y.split('.')[0]
+        postsDisctionary[date] = nazwa_pliku 
+print(postsDisctionary)
+ordered_postsDisctionary = sorted(postsDisctionary.items(), key=lambda x: datetime.strptime(x[0], '%Y-%m-%d %H:%M:%S'))
+converted_dict = dict(ordered_postsDisctionary)
+print(converted_dict)
 
 # print(posts)
 lines = []
@@ -33,9 +48,9 @@ with open(r"index.html", 'w') as fp:
             fp.write(line)
 
 
-for post in posts:
+for post in converted_dict:
     evenN = 1
-    f = open(post, "r")
+    f = open(converted_dict[post], "r")
     text = f.read()
     word = re.split(" ", text)
     # print(word)
@@ -53,7 +68,7 @@ for post in posts:
     with open("index.html", "r") as f:
         contents = f.readlines()
 
-    contents.insert(linesToDelete[0], '<div class="panel" class="blog_layouts_post_card blog_layouts_shadow"> <h3>'+ tablica[1] +'</h3> <p>12-12-2003 </p> <p class="zajawka">'+ tablica[0] +'</p><a href="'+post+'"><button class="button">Read More</button></a></div>'+'\n')
+    contents.insert(linesToDelete[0], '<div class="panel" class="blog_layouts_post_card blog_layouts_shadow"> <h3>'+ tablica[1] +'</h3> <p>'+ tablica[2] +'</p> <p class="zajawka">'+ tablica[0] +'</p><a href="'+converted_dict[post]+'"><button class="button">Read More</button></a></div>'+'\n')
 
     with open("index.html", "w") as f:
         contents = "".join(contents)
