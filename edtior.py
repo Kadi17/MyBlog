@@ -14,6 +14,7 @@ for file in files:
 for nazwa_pliku in posts:
     with open(nazwa_pliku, 'r') as plik:
         pierwsza_linijka = plik.readline().strip()  # Odczytaj pierwszą linijkę
+        print(pierwsza_linijka)
         x = pierwsza_linijka.replace("<!-- ", "")
         y = x.replace(' -->','')
         date = y.split('.')[0]

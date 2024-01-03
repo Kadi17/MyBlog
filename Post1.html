@@ -1,0 +1,77 @@
+<!-- 2024-01-03 17:03:39.923392 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    CTF ze strony tryhackme.com, motym przewodnim tego zadania jest znany serial o hakerze "Mr Robot"
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Mr Robot CTF
+            <!--start--> 
+          </h1>
+<p>  <!--start--> 2024-01-03 <!--start--> </p>
+          <p>Na początku zadnia użyłem narzędzia nmap do przeskanowania adresu IP. Jak widać na załączonym obrazku pokazało mi to że otwarte są porty odpowiedzialne za stronę internetową.</p>
+          <img src="zdj/03.01/1.png" alt="">
+          <p>Po przeglądnięciu bardzo ładnej aczkolwiek mało użytecznej głównej strony postanowiłem poszukać głębiej w takich podstronach jak robots, co dało większe rezutalty.</p>
+          <img src="zdj/03.01/robots.png" alt="">
+          <p>Po przejściu na key-1-of-3.txt jak łatwo można się domyśleć udało się odkryć pierwszą z 3 flag ukrytą w tych zadaniu.</p>
+          <img src="zdj/03.01/First flag.png" alt="">
+          <p>Następne poprzez polecenie strings wyświetliłem zawartość pliku fsocity.disc. Z jakiegoś powodu spodziewałem się dużej ilości nie czytelnych znaków ku mojemu zaskoczeniu zobaczyłem ogromną listę bardziej i mniej czytelnych słów, wyglądało to jak potencjalny słownik z hasłami aczkolwiek na ten moment nie widziałem zastosowania.</p>
+          <img src="zdj/03.01/5.png" alt="">
+          <p>Wróciłem do dalszego eksplorowania strony internetowej a pomógł mi przy tym gobuster który w szybki sposób znalazł kilka podstron </p>
+          <img src="zdj/03.01/Gobuster.png" alt="">
+          <p>Z listy tych wszystkich podstron najbardziej zaciekawił mnie panel do logowania na wordpressa dzięki któremu spróbuje włamać się po przez atak brute force.</p>
+          <img src="zdj/03.01/wp.png" alt="">
+          <p>Oczywiście narzędziem które posłuży do tego będzie hydra, jak login próbuje słowa Elliot które jest imieniem głównego bohatera w serialu 'Mr Robot' a lista haseł będzie plik fsociety o którym pisałem wyżej.</p>
+          <img src="zdj/03.01/Hydra.png" alt="">
+          <p>Niestety plik ten zawierał zbyt dużą ilość słów także po dokładnym przejrzeniu go postanowiłem posortować i usunąć powtarzające się linie </p>
+          <img src="zdj/03.01/Hydra2.png" alt="">
+          <p>I tak o to udało zdobyć się hasło do konta Elliot.</p>
+          <img src="zdj/03.01/Hydra3.png" alt="">
+          <p>Po wejściu na stronę wkleiłem kod php-reverse-shell w miejscu themes/twentyfifteen/archive.php oraz odpaliłem nasłuchiwanie na porcie 53</p>
+          <img src="zdj/03.01/revershell.png" alt="">
+          <p>Po  uzyskaniu dostępu odnalazłem plik z 2 flagą aczkolwiek tylko robot miał uprawnienia to odczytu tego, ale obok tego był blik z hashem hasła do konta robota</p>
+          <img src="zdj/03.01/hash.png" alt="">
+          <p>Do odhashowania hasła użyłem narzędzia john oraz znowu pliku fsocity.</p>
+          <img src="zdj/03.01/revershell2.png" alt="">
+          <p>Po zalogowaniu na konto robot mogłem zobaczyć zawartość pliku jakim była flaga.</p>
+          <img src="zdj/03.01/flaga 2.png" alt="">
+          <p>Podpowiedzią do ostaniej flagi było pojawiające się już w tym zadaniu słowo nmap, gdzie rzeczywiście ukryta została ostania flaga.</p>
+          <img src="zdj/03.01/nmap.png" alt="">
+          <img src="zdj/03.01/flaga 3.png" alt="">
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
