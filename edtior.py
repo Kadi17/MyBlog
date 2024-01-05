@@ -14,15 +14,14 @@ for file in files:
 for nazwa_pliku in posts:
     with open(nazwa_pliku, 'r') as plik:
         pierwsza_linijka = plik.readline().strip()  # Odczytaj pierwszą linijkę
-        print(pierwsza_linijka)
         x = pierwsza_linijka.replace("<!-- ", "")
         y = x.replace(' -->','')
         date = y.split('.')[0]
         postsDisctionary[date] = nazwa_pliku 
-print(postsDisctionary)
+# print(postsDisctionary)
 ordered_postsDisctionary = sorted(postsDisctionary.items(), key=lambda x: datetime.strptime(x[0], '%Y-%m-%d %H:%M:%S'))
 converted_dict = dict(ordered_postsDisctionary)
-print(converted_dict)
+# print(converted_dict)
 
 # print(posts)
 lines = []
@@ -32,10 +31,10 @@ with open(r"index.html", 'r') as fp:
     # read an store all lines into list
     lines = fp.readlines()
     for idx, line in enumerate(lines, start=1):
-        print(line)
+        # print(line)
         if re.search("<!-- StartContent -->", line):
             linesToDelete.append(idx)
-            print(idx)
+            # print(idx)
         if re.search("<!-- EndContent -->", line):
             linesToDelete.append(idx)
             
@@ -74,4 +73,4 @@ for post in converted_dict:
     with open("index.html", "w") as f:
         contents = "".join(contents)
         f.write(contents)
-    print(tablica)
+    print(tablica[1])
