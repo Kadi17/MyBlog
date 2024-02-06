@@ -1,0 +1,63 @@
+<!-- 2024-02-06 23:28:08.957619 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Po ktrótkiej przerwie rozwiązałem CTF na stronie TryHackme o tematyce białego wywiadu.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Prosty CTF z kategori OSINT
+            <!--start--> 
+            </h1>
+<p>  <!--start--> 2024-02-06 <!--start--> </p> 
+
+          <p>Na samym początku zadania pobrałem zdjęcie i sprawdziłem jego metadane które między innymi nakierowały mnie na twórcę tego pięknego zdjęcia, czyli niejakiego OWoodflint</p>
+          <img src="zdj/06.02/autor.png" alt="metadane">
+          <p>Następnym zadanie było napisanie co zawiera profilowe autora. Po wpisaniu nazwy w googla znalałem konto na Twitterze którego profilowe przedstawiało kota oraz wpis który był podpowiedzią do następnego zadania.</p>
+          <img src="zdj/06.02/twittewr.png" alt="twitter">
+          <p>Wpis ten zawierał BSSID czyli niepowtarzalny identyfikator urządzenia bezprzewodowego. Identyfikator ten z pomocą aplikacji wigle.net pozwolił na zlokalizowanie miasta w którym mieszka autor zdjęca.</p>
+          <img src="zdj/06.02/wiglenet.png" alt="wigle.net">
+          <p>Następnym zadaniem było podanie emaila twórcy zdjęcia, w poszukiwaniu następnym mediów społecznościowych znalazłem konto Github na którym zosatł podany email w celach kontaktowych oraz link do bloga.</p>
+          <img src="zdj/06.02/email.png" alt="Github">
+          <p>Po wejściu na stronę internetową znalazłem odpowiedzi na dwa ostanie zadanie. Gdzie autor był na wakacjach:</p>
+          <img src="zdj/06.02/holiday.png" alt="">
+          <p>Oraz hasło któreg zostało ukryte w mało bezpieczny sposób czyli po prostu jako biały tekst na białym tle.</p>
+          <img src="zdj/06.02/password.png" alt="">
+          <p>Źródło: https://tryhackme.com/room/ohsint</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
