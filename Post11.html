@@ -1,0 +1,85 @@
+<!-- 2024-02-13 19:44:55.814908 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Roziwązałem 4 CTF ze strony ctflearn.com z kateogri forensics.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            4 CTF z kategori forensics
+            <!--start--> 
+            </h1> 
+<p>  <!--start--> 2024-02-13 <!--start--> </p> 
+
+          <p>Milk's Best Friend było pierwszym zadaniem, plik który dostałem przedstawiał ciastko oreo</p>
+          <img src="zdj/13.02/oreo.png" alt="Atak ddos">
+          <p>Rozpocząłem standardowo od sprawdzenia zawartości narzędziem strings ale dostałem tylko informacje że to nie tu.</p>
+          <img src="zdj/13.02/strings.png" alt="">
+          <p>Użyłem kolejnego często używanego narzędzie w tej kategori czyli binwalk które pokzało że zdjęcie oreo kryło w sobie kolejne zdjęcie tym razem przedstawiające już 2 ciastka oreo a przy okazji kryło w sobie też flagę</p>
+          <img src="zdj/13.02/binwalk.png" alt="">
+          <img src="zdj/13.02/flag.png" alt="">
+          <p>Źródło: https://ctflearn.com/challenge/195</p>
+          <p> </p>
+          <p>Następnym zadaniem było Digital Camouflage które zawierało plik z logami sieci które można wyświetlić w programie wireshark. Zadanie polegało na znalezieniu hasła do rutera.</p>
+          <p>Rozwiązałem je sposobem możliwe że mało efektywnym a mianowicie leciałem pokoleji po logach i szukałem podejrzanych rzeczy, takim okzało się pswrd=UEFwZHNqUlRhZq które wygląda jak sposób zapisania zaszyfrowanego hasła w zmiennej, co też okazało się prawdą i końcem zadania.</p>
+          <img src="zdj/13.02/2ctf whireshark.png" alt="">
+          <p>Hasło było bardzo prosto saszyfrowane bo po przez bardzo popularne szyfrowanie base64</p>
+          <img src="zdj/13.02/2ctf flaga.png" alt="">
+          <p>Źródło: https://ctflearn.com/challenge/237</p>
+          <p> </p>
+          <p>Trzecie zadanie pod tytułem Exclusive Santa okazało się chyba najciekwszych z dzisiaj prezentowanych. Do pobrania były dwa zdjęcia oraz komentarz do zadania który sugerował że te zdjęcia dadzą odpowiedź jeśli się je połączy.</p>
+          <p>Zacząłem na początku od skanowania obu zdjęć przez aplikacje Stegsolve którą poznałem kiedyś podczas roziwązywania innego zadania na tej stornie.</p>
+          <img src="zdj/13.02/3ctf 1.png" alt="">
+          <p>Aczkolwiek po dokładnym przejrzeniu obu próbowałem też nałożyć jeden na drugi ale to też nie dawało żadnego rezultatu. Wtedy dostrzegłem pewny drobiazg, a mianowicie zdjęcia nazywały się 1 oraz 3 co sugerowało że brakuje jednego który był konieczny do rozwiązania. Poraz kolejny użyłem narzędzia binwalk.</p>
+          <img src="zdj/13.02/3ctf 2.png" alt="">
+          <p>I odnalazłem zaginione zdjęcie</p>
+          <img src="zdj/13.02/3ctf 3zdjęcie.png" alt="">
+          <p>Po połączenie tego w programie Stegsolve ze zdjęciem numer jeden moim oczom ukazał sie w końcu poprawnie wyglądający obrazek</p>
+          <img src="zdj/13.02/3ctf flaga.png" alt="">
+          <p>Źródło: https://ctflearn.com/challenge/851</p>
+          <p> </p>
+          <p>Ostanim dzisiejszym wyzwaniem było Seeing is believing. Według fabuły trzeba było rozszyfrować wiadomość od  który miał probelmy z komunikacją.</p>
+          <p>Jako że plik po otworzeniu ukazywał niezrozumiałe znaczki postanowiłem popatrzeć w jego wnętrze po przez hexedit</p>
+          <img src="zdj/13.02/4ctf hexedit.png" alt="">
+          <p>Tam odczytałem jego rozszerzenie jako OGGS, nic mi to nie mówiło ale po szybkim wygooglowaniu dowiedziałem się że jest to rozszerzenie używane wplikach audio dlatego tez plik wrzuciłem do programu Audacity</p>
+          <img src="zdj/13.02/4ctf audacity.png" alt="">
+          <p>Jako że już kiedyś robiłem zadanie w którym flaga ukryta była w spectogramie była to pierwsza rzecz jaką sprawdziłem i ostania bo okazało się że kryje ona kod QR prowadzący do notanika w którym napisana jest flaga.</p>
+          <img src="zdj/13.02/4ctf flag.png" alt="">
+          <p>Źródło: https://ctflearn.com/challenge/441</p> 
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
