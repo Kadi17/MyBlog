@@ -1,0 +1,74 @@
+<!-- 2024-02-15 23:59:55.883031 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Pierwszy CTF skupiony bardziej na linuxie, drugi bardziej ogólnt w tematyce kryptografi i forensics.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            2 CTF ze strony tryhackme.
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-02-15 <!--start--> </p> 
+
+          <p>Standardowo zaczęło się od rozpoznania za pomocą narzędzia nmap, najpierw takiego ogólnego potem szczegółowego gdzie poznałem nazwe hosta ftp.</p>
+          <img src="zdj/15.02/nmap.JPG" alt="">
+          <img src="zdj/15.02/nmap2.JPG" alt="">
+          <p>Na serwerze ftp znajdowały się dwa pliki, niestety z jakiegoś powodu straciłem zrzut ekranu. Pierwszy plik zawierał inofrmacje kto był autorem zadań a drugi zawierdał słowa przypominające różne hasła.</p>
+          <img src="zdj/15.02/slowik.JPG" alt="">
+          <p>Hasła te oczywiście postanowiłem sprawdzić pod kątem zalogowania się do usługi ssh za pomoca ataku brute force</p>
+          <img src="zdj/15.02/hydra.JPG" alt="hydra">
+          <p>Po poznaniu hasła do ssh szybko udało się zlokalizować pierwszą flagę.</p>
+          <img src="zdj/15.02/flaga.JPG" alt="">
+          <p>Druga wlaga wymagała podstępem uzyskania uprawnienień roota, po zapoznaniu się z sudo -l znalazłem infomrację jak wykorzystać tar do uzyskania uprawnień roota, tu podsyłam ten artykuł: https://gtfobins.github.io/gtfobins/tar/</p>
+          <img src="zdj/15.02/flaga2.JPG" alt="">
+          <p>Źródło: https://tryhackme.com/room/cowboyhacker</p>
+          <p> </p>
+          <p>Następny CTF okazał się dużo łatwiejszy dla mnie chodź i tak nauczyłem się z niego kilku rzeczy.</p>
+          <p>Pierwsze zadania polegały pokolei na odszyforwaniu tekstów które były ukryte za pomocą między innymi binarki, base64, base32, szyfru cezara, a to co pokażę to ostanie zadanie z części krypto nad którym najwięcej główkowałem bo okazało się że po porstu jest połączeniem kilku już wcześniej używanych szyfrów</p>
+          <img src="zdj/15.02/szyfr.JPG" alt="">
+          <p>Następne zadanie było czymś co dosłwonie kilka dni temu pokazywałem czyli tekstem ukrytym w pliku dźwiękowym</p>
+          <img src="zdj/15.02/spectogram.JPG" alt="">
+          <p>Przedostanie zadanie które wydawało mi się że zrobię w chiwlę bo jest z kategori która bardzo dobrze znam okazało się zadaniem w którym poznałem nowe narzędzie do zadań tego typu. Steghide jest to popularne narzędzie do znajdywania ukrytych rzeczy w plikach ale jakoś do tej pory nigdy nie było mi konieczne w użyciu.</p>
+          <img src="zdj/15.02/steghide.JPG" alt="">
+          <p>Ostanie zadanie było standardowym użyciem dwóch często już pokazywanych przezemnie nazedzi binwalk oraz strings.</p>
+          <img src="zdj/15.02/binwalk.JPG" alt="">
+          <img src="zdj/15.02/strings.JPG" alt="">
+          <p>Źródło: https://tryhackme.com/room/c4ptur3th3fl4g?path=undefined</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
