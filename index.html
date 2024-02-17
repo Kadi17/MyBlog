@@ -27,6 +27,11 @@
       <main>
 <!-- StartContent -->
 <div class="panel" class="blog_layouts_post_card blog_layouts_shadow"> <h3> 
+            RootMe oraz Crack the hash
+           </h3> <p> 2024-02-17</p> <p class="zajawka"> 
+    Rozwiązywałem  CTF RootMe, gdzie kontynuowałem praktykę związane z systemem Linux oraz odwróconymi powłokami. Dodatkowo, w CTF Crack the hash zdobyłem nową wiedzę na temat algorytmów kryptograficznych.
+   </p><a href="Post13.html"><button class="button">Read More</button></a></div>
+<div class="panel" class="blog_layouts_post_card blog_layouts_shadow"> <h3> 
             2 CTF ze strony tryhackme.
            </h3> <p> 2024-02-15</p> <p class="zajawka"> 
     Pierwszy CTF skupiony bardziej na linuxie, drugi bardziej ogólnt w tematyce kryptografi i forensics.
@@ -89,4 +94,50 @@
       </footer>
     </div>
   </body>
+  <script>
+    function wyswietlIloscOdwiedzin() {
+        // Odczytaj wartość ciasteczka
+        var liczbaOdwiedzin = parseInt(getCookie("liczba_odwiedzin"));
+
+        // Jeśli ciasteczko nie istnieje lub nie zawiera liczby, ustaw liczbę odwiedzin na 0
+        if (isNaN(liczbaOdwiedzin)) {
+            liczbaOdwiedzin = 0;
+        }
+
+        // Inkrementuj liczbę odwiedzin
+        liczbaOdwiedzin++;
+
+        // Zapisz liczbę odwiedzin do ciasteczka
+        setCookie("liczba_odwiedzin", liczbaOdwiedzin, 365);
+
+        // Wyświetl liczbę odwiedzin
+        console.log("Liczba odwiedzin: " + liczbaOdwiedzin);
+    }
+
+    // Funkcja pomocnicza do odczytu ciasteczka po jego nazwie
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    // Funkcja pomocnicza do ustawiania ciasteczka
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "") + expires + "; path=/";
+    }
+
+    // Wywołanie funkcji
+    wyswietlIloscOdwiedzin();
+  </script>
 </html>

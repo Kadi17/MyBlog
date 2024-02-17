@@ -1,0 +1,80 @@
+<!-- 2024-02-17 23:35:21.528839 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Rozwiązywałem  CTF RootMe, gdzie kontynuowałem praktykę związane z systemem Linux oraz odwróconymi powłokami. Dodatkowo, w CTF Crack the hash zdobyłem nową wiedzę na temat algorytmów kryptograficznych.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            RootMe oraz Crack the hash
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-02-17 <!--start--> </p>  
+
+          <p>Pierwszym CTF był RootMe, na starcie zacząłem od zebrania informacji pierwsz ogólniej a potem bardziej szczegołow za pomocą nmapa</p>
+          <img src="zdj/17.02/nmap.JPG" alt="nmap">
+          <p>Następnie postępując zgodnie z pytaniami w ctf szukałem podejrzanej podstrony narzędziem gobuster</p>
+          <img src="zdj/17.02/gobuster.JPG" alt="">
+          <p>Okazało się że jest podstrona w której można uplodować własny plik dlatego postanowiłem wstrzyknąć kod php revers shell, jest to ten sam kod który już używałem w poprzednich rozwiązaniach.</p>
+          <img src="zdj/17.02/phpreverse.JPG" alt="">
+          <p>Po udanym zalogowaniu się do zdalnego terminala udało się też znaleść flage do której potrzebowałem komendy find</p>
+          <img src="zdj/17.02/1flaga.JPG" alt="">
+          <p>Do następnej flagi potrzebne były uprawnienia roota, z pomocą podpowiedzi dowiedziałem się że pomocny w tym będzie python</p>
+          <img src="zdj/17.02/suid permision.JPG" alt="">
+          <p>Z pomocą storny internetowej: https://gtfobins.github.io/gtfobins/python/ udało się za pomocą pythona uzyskać uprawnienia roota i zdobyć 2 flagę.</p>
+          <img src="zdj/17.02/root and flag.JPG" alt="">
+          <p>Źródło: https://tryhackme.com/room/rrootme</p>
+          <p> </p>
+          <p>Drugi CTF był skupiony w 100% na kryptgrami, moje rozwiązanie nie będzie przedstawiać 100% rozwiązania, na początku było kilka różnych zaszyforwanych wiadomości ktróre rozpoznawałem za pomoca narzędzie przedstawionego na zdjęciu poniżej, a deszyfrowałem za pomocą różnych przeglądarkowych aplikacji.</p>
+          <img src="zdj/17.02/hashid.JPG" alt="">
+          <p>Pierwsze użycie hashcata padło przy algorytmie Blowfish, w komendzie po -m należy podać numer który możemy znaleść na stronie https://hashcat.net/wiki/doku.php?id=example_hashes.</p>
+          <p>Utorzyłem także plik w którym przekierwowałem hasła o odpowiednije składni i długości z pliku rockyou.</p>
+          <img src="zdj/17.02/hashcat.JPG" alt="">
+          <img src="zdj/17.02/hashcat2.JPG" alt="">
+          <p>Następny hash udało sie rozpoznać i znaleść przez charakterystyczny początek $6$, był to algorytm SHA512.</p>
+          <img src="zdj/17.02/sha512.3.JPG" alt="">
+          <img src="zdj/17.02/sha512.2.JPG" alt="">
+          <p>W tym przypadku numer w paramaetrze -m wynosi 1800</p>
+          <img src="zdj/17.02/sha512.JPG" alt="">
+          <img src="zdj/17.02/sha512.4.JPG" alt="">
+          <p>Ostatnim hashem przy którego wykryciu pomogła mi podpowiedź był HMCA-SHA1, postępowanie jest analogiczne jak poprzednie jedyna różnia że tym razem plikiem którey był używany do łamania był bezpośrednio plik rockyou.</p>
+          <img src="zdj/17.02/sha1.JPG" alt="">
+          <img src="zdj/17.02/sha1.2.JPG" alt="">
+          <p>Źródło: https://tryhackme.com/room/crackthehash</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
