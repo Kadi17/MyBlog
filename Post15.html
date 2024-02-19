@@ -1,0 +1,82 @@
+<!-- 2024-02-19 19:01:22.396004 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Zrobiłem CTF Wonderland na stronie tryhackme który osadzony był fabularnie w świecie Alicji w Krainie Czarów.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            CTF Wonderland
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-02-19 <!--start--> </p>           
+
+          <p>Scanowanie serwera za pomoca nmap oraz gobuster</p>
+          <img src="zdj/19.02/scanning.JPG" alt="">
+          <img src="zdj/19.02/r.JPG" alt="">
+          <p>Tu nie ukrywam że zajęło mi chwilę czasu żeby ogarnąć że kolejny raz trzeba odpalić gobustera</p>
+          <img src="zdj/19.02/keep going.JPG" alt="">
+          <p>I tak dalej a pod koniec dopiero zauwazyłem że po porsotu powstaje słowo rabbit z podkatalogów.</p>
+          <img src="zdj/19.02/keep going2.JPG" alt="">
+          <img src="zdj/19.02/keep going3.JPG" alt="">
+          <img src="zdj/19.02/rabbit.JPG" alt="">
+          <p>W tym miejscu po krótkiej analizie w kodzie źródłowym znalazłem paragraf który miał ustawiony display:none</p>
+          <img src="zdj/19.02/displaynone.JPG" alt="">
+          <p>Ukrytwa wiadomość okazała się nazwą i hasłem do ssh.</p>
+          <p>Po użyciu komendy sudo -l znalazłem informacje że uprawnienia rabbita posiada plik python który był prostym plikiem wypisującym losowe cytaty ale co najważniejsze używa biblioteki random pod którą udało się podszyć uzyskując uprawnienia do konta.</p>
+          <img src="zdj/19.02/random.py.JPG" alt="">
+          <img src="zdj/19.02/random.py2.JPG" alt="">
+          <img src="zdj/19.02/surabbit.JPG" alt="">
+          <p>W katalogu domowym rabbita znalazłem plik bash który przesłałem na lokalny komputer żeby przyjrzeć się mu w środku, i na podobnej zasadnie jak wcześnije tym razem podmieniłem plik date uzyskując hasło i dostęp do kolejnego konta.</p>
+          <img src="zdj/19.02/teaparty.JPG" alt="">
+          <img src="zdj/19.02/teaparty2.JPG" alt="">
+          <img src="zdj/19.02/password.JPG" alt="">
+          <p>Za pomocą Simple HTTP Server przesłałem narzędzie LinEnum.sh które ostatecznie pomogło mi znaleść podtność pomagającą dostać uprawnienia roota</p>
+          <img src="zdj/19.02/linenum.JPG" alt="">
+          <p>Tu rzuciło mi się w oczy perl = cap_setuid+ep co też wygooglowałem i znalazłem stronę https://gtfobins.github.io/gtfobins/perl/ i pomogło znaleź drugą flagę.</p>
+          <img src="zdj/19.02/perl.JPG" alt="">
+          <img src="zdj/19.02/perl2.JPG" alt="">
+          <img src="zdj/19.02/flaga2.JPG" alt="">
+          <p>I tak o to zgodnie z podpowiedzią że wszystko jest tu na odwrót została mi jeszcze pierwsza prostsza flaga która była podstępnie ukryta w katalogu root do którego mogłem wejść ale nie mogłem użyć np komendy ls.</p>
+          <img src="zdj/19.02/flaga1.JPG" alt="">
+          <p>Źródło: https://tryhackme.com/room/wonderland</p>
+
+
+
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>

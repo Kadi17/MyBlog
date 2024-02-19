@@ -1,0 +1,69 @@
+<!-- 2024-02-18 17:11:54.130317 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Problematyczny CTF Overpass
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Roziwązałem CTF Overpass na stronie tryhackme niestety nie udało mi się ukończyć przez prawdopodobnie błędy maszyny.
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-02-18 <!--start--> </p>  
+
+          <p>Na początku standardowo rekonesans sieci za pomocą nmap</p>
+          <img src="zdj/18.02/nmap.JPG" alt="">
+          <p>Udało się odnaleść plik JavaScript w którym była informacja o ciasteczkach potwierdzających że użytkownik się zalogował.</p>
+          <img src="zdj/18.02/js.JPG" alt="">
+          <p>Za pomocą narzędzi deweloperskich dodałem ciasteczka SessionToken z wartościa pleaselogme co dało mi sesje zalogowanego użytkoniwka i kod do ssh.</p>
+          <img src="zdj/18.02/cookies.JPG" alt="">
+          <img src="zdj/18.02/sshkey.JPG" alt="">
+          <p>Za pomocą narzędzia ssh2john.py zamieniłem klucz w hash</p>
+          <img src="zdj/18.02/ssh.JPG" alt="">
+          <p>A następnie za pomocą john i słownika rockyou zmalazłem hasło do ssh co pozwoliło na zalogowanie się i uzyskanie pierwszej flagi.</p>
+          <img src="zdj/18.02/ssh.JPG" alt="">
+          <p>Plik .overpass przechowywał hasło które po przeazanlizowaniu kodu źródłowego ich autoreskiego menadżera haseł okazało się być zaszyfrowane poprzez mało bezpieczny algorytm ROT47.</p>
+          <img src="zdj/18.02/password.JPG" alt="">
+          <img src="zdj/18.02/decrypt.JPG" alt="">
+          <p>Po alnalizie Todo listy twórców programu zaintersesowałem się tematem automatyzacji pewnych procesów a tym w linuxie zajmuje się narzędzie Cron.</p>
+          <img src="zdj/18.02/crone.JPG" alt="">
+          <p>Zmieniłem ip z lokalnego na ip mojej maszyny oraz na maszynie uruchomiłem server http niestety po mimo wielu prób i konfiguracji nie udało mi się stworzyć połączenia i podniesienia sobie uprawnień</p>
+          <img src="zdj/18.02/hosts.JPG" alt="">
+          <img src="zdj/18.02/koniec.JPG" alt="">
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
