@@ -1,0 +1,4 @@
+var/log/auth.log
+
+ststem all in one dla analizy powłamaniowe:
+tsurugi lub remnux
