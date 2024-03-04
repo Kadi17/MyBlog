@@ -1,0 +1,64 @@
+<!-- 2024-03-04 22:34:14.118733 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Zadanie ze strony tryhackme.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            CTF Ignite
+            <!--start--> 
+            </h1> 
+<p>  <!--start--> 2024-03-04 <!--start--> </p>           
+
+          <p>Po szybkim skanowaniu sieci otwotzyłem stornę internetową na której była iformacja o tym jaki CMS używany jest na stronie a nawet jak wejśc w dashboard i podane hasło oraz nazwa konta.</p>
+          <img src="zdj/04.03/1.png" alt="">
+          <p>Po dokładnym przeglądnięciu wersji webowej oraz po nie udanej próbie wrzucenia pliku php z revershellem przeszedłem do searchsploit i po znalezieniu payloadu użyłem go.</p>
+          <img src="zdj/04.03/2.png" alt="">
+          <img src="zdj/04.03/3.png" alt="">
+          <p>Po przez komendę znalezienioną w internecie udało się uruchomić revershella i wyświetlić pierwszą flagę</p>
+          <img src="zdj/04.03/reverse shell.png" alt="">
+          <img src="zdj/04.03/first flag.png" alt="">
+          <p>Następnie po długiej analizie na stornie głównej znalazłem informację w jakim miejscu znajduję się baza danych która okazało się że zawiera hasło do roota. Co pozwoliło otrzymać drugą flagę.</p>
+          <img src="zdj/04.03/database.png" alt="">
+          <img src="zdj/04.03/database 2.png" alt="">
+          <img src="zdj/04.03/database 3.png" alt="">
+          <img src="zdj/04.03/second flag.png" alt="">
+          <p>Źródło: https://tryhackme.com/room/ignite</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
