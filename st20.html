@@ -1,0 +1,70 @@
+<!-- 2024-04-29 20:36:32.979711 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    zajawka
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Tytuł
+            <!--start--> 
+<p>  <!--start--> 2024-04-29 <!--start--> </p>          </h1> 
+
+          <p>content artykułu</p>
+          <img src="quishing-3.jpg" alt="Atak ddos">
+          <img src="" alt="">
+          <p>Na początku jak zawsze zacząłem od rekonensanu bezpośrednio strony interentowej oraz narzędziem nmap gdzie skupiłem się na otawrtym porcie 2049</p>
+          <img src="zdj/29.04/nmap.JPG" alt="">
+          <p>Po wyszukaniu w przęglądarce informacji na temat tego portu natrafiłem na artykuł na stronie HackTricks</p>
+          <img src="zdj/29.04/web.JPG" alt="">
+          <p>Podożając za stroną dowiedizałem się że jest udostępniony folder do którego da się podłaczyć </p>
+          <img src="zdj/29.04/mnt.JPG" alt="">
+          <p>Po utworzeniu użytkownika który byłby wstanie dostać się do zawartości foldera udało sie odczytać login i hasło do serwera ftp</p>
+          <img src="zdj/29.04/add user.JPG" alt="">
+          <img src="zdj/29.04/ftpuser.JPG" alt="">
+          <p>Server ftp zawierał bardzo ciekawe informacje między innymi plik z dużą ilością haseł oraz notatkę od admina która sugerowała żeby uzywać tylko tych haseł o są ciężkie do złamania oraz to że sam używa jednego z tych haseł.</p>
+          <img src="zdj/29.04/ftp.JPG" alt="">
+          <img src="zdj/29.04/note.JPG" alt="">
+          <p>Po dokładnym przeglądnięciu servera FTP wróciłem do poszukiwań innych rzeczy na samej stronie interentowej. Po utworzeniu konta i zalogowaniu się na nie w narzędiu burp suite odrazu rzucało się w oczy ciasteczko z pewnym Session ID</p> 
+          <img src="zdj/29.04/burb.JPG" alt="">
+          <p>Po przeanalizowaniu tego tokena w narzędziu CyberChef oraz CrackStation okazało się że owy token to po prostu login i hasło ukryte pod postacją base64 a samo hasło jeszcze jest zahaszowane za pomocą MD5 </p>
+          <img src="zdj/29.04/burb 2.JPG" alt="">
+          <img src="zdj/29.04/password.JPG" alt="">
+          
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
