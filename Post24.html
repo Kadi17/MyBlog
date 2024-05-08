@@ -1,0 +1,65 @@
+<!-- 2024-05-08 23:55:05.549338 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    CTF ze strony tryhackme w którym dużą rolę odegrał command injection.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            UltraTech CTF
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-05-08 <!--start--> </p>           
+
+          <p>Rekonesans infrastruktury zaczałem od nmapa oraz gobustera na porcie 8081 w którym znajdowało się API do główego portalu.</p>
+          <img src="zdj/08.05/nmap.png'" alt="Atak ddos">
+          <img src="zdj/08.05/gobuster.png" alt="">
+          <p>Na start uwage moją skupiłem na podstronie /auth gdzie należało się zalogować co nawet próbowałem zrobić za pomocą narzędzia hydry aczkolwiek po pewnym czasie odpusciłem.</p>
+          <img src="zdj/08.05/test auth.png" alt="">
+          <p>Postanowiłema skierować moją uwagę na stronę główną znajdującą się na nietypowym porcie 31331 gdzie po użyciu tym razem narzędzia dirb trafiłem na plik js który sugerował możliwość command injection</p>
+          <img src="zdj/08.05/dirb .png" alt="">
+          <img src="zdj/08.05/cmdi.png" alt="">
+          <p>Za pomocą narzędzie Burp Suite udało się potwiedzić te przypuszenia i uzyskać nazwę użytkownika oraz hash który był hasem MD5.</p>
+          <img src="zdj/08.05/burp.png" alt="">
+          <img src="zdj/08.05/hash.png" alt="">
+          <p>Po odszyfrowaniu hasła udało sie zalogować na konto r00ta która przez swoją przynależność do grupy docker pozowliła wyświetlić klucz SSH roota który był flagą.</p>
+          <img src="zdj/08.05/password.png" alt="">
+          <img src="zdj/08.05/root ssh.png" alt="">
+          <p>Źródło: https://tryhackme.com/r/room/ultratech1</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>

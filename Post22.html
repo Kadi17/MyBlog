@@ -1,0 +1,67 @@
+<!-- 2024-05-08 21:21:12.541958 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    CTF z wieloma miejscami które na pierwszy rzut oka wydawały się mieć potencjał a okazywały się zwykłymi żartami ze strony twórcy.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Boiler CTF 
+            <!--start--> 
+            </h1> 
+<p>  <!--start--> 2024-05-06 <!--start--> </p>           
+
+          <p>Niestety z niewiadomego mi powodu folder ze zdjęciami pierwszego przejścia tego challenga gdzię wszedłem w dużo więcej pułapek zniknał mi z dysku co spowodowało że musiałem jeszcze raz go przejść i w tym podejściu pokazane będzie mniej baitów ale to może i lepiej.</p>
+          <p>Standardowo zacząłem od skanowania infrastruktury.</p>
+          <img src="zdj/06.05/nmap.png" alt="">
+          <p>Odrazu w oczy rzucił się serwer ftp który oczywiście wyglądał zbyt pięknie żeby był prawdziwy.</p>
+          <img src="zdj/06.05/ftp bait.png" alt="">
+          <p>Następnie skanowałem podstrony których okazało się bardzo dużo ale _test okazała się tą której szukałem.</p>
+          <img src="zdj/06.05/dirb.png" alt="">
+          <img src="zdj/06.05/sar2html.png" alt="">
+          <p>Po wyszukaniu sformułowania sar2html w exploitdb okazało się że bardzo łatwo można wykonywać komendy po przez URL</p>
+          <img src="zdj/06.05/exploitdb.png" alt="">
+          <p>Co pozowliło uzysakć hasło i login do konta ssh</p>
+          <img src="zdj/06.05/password.png" alt="">
+          <img src="zdj/06.05/ssh.png" alt="">
+          <p>Następnie po przez komende find udało się wyszukać że po przez co zabawne narzędzie find mogę uzyskać uprawnienia roota co kończyło wyzwanie.</p>
+          <img src="zdj/06.05/suid.png" alt="">
+          <img src="zdj/06.05/root.png" alt="">
+          <p>Źródło: https://tryhackme.com/r/room/boilerctf2</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>

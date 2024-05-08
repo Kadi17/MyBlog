@@ -1,0 +1,68 @@
+<!-- 2024-05-08 23:40:36.332999 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    CTF ze strony tryhackme którego głównym tematem jest wordpress oraz smb.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Blog CTF
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-05-07 <!--start--> </p>          
+
+          <p>Standardowo na początku użyłem narzędzia nmap./p>
+          <img src="zdj/07.05/nmap.png" alt="Atak ddos">
+          <p>Pierwsza myśl po zobaczeniu wyniku skanowania było spradzenie SMB które okazało się dosłownie króliczą norą hehe.</p>
+          <img src="zdj/07.05/smb bait.png" alt="">
+          <p>Następne działa zosatły skierowane bezpośrednio w wordpressa na którym stała storna, na początku dzięki skanowaniu poznałem dwie nazwy użytkniwków.</p>
+          <img src="zdj/07.05/WPScan.png" alt="">
+          <img src="zdj/07.05/users.png" alt="">
+          <p>A następnie poprzez atak słownikowy poznałem hasło do jednego z kont.</p>
+          <img src="zdj/07.05/WPScan brute force.png" alt="">
+          <img src="zdj/07.05/WPScan brute force 2.png" alt="">
+          <p>Po sprawdzeniu w exploitdb tej wersji wordpressa uruchomiłem metasploit w którym znajdował się exploit pod tą wersję który uruchomił revershella</p>
+          <img src="zdj/07.05/metasploit.png" alt="">
+          <p>Oczywiście jak to w takich zadaniach musiało na mnie czekać kolejne zaskoczenie</p>
+          <img src="zdj/07.05/bait user.txt.png" alt="">
+          <p>Po którym zabrałem się za uzysaknie uprawnień roota dzięki plikowi checker.</p>
+          <img src="zdj/07.05/find checker.png" alt="">
+          <img src="zdj/07.05/root.png" alt="">
+          <p>Źródło: https://tryhackme.com/r/room/blog</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
