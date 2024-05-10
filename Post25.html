@@ -1,0 +1,65 @@
+<!-- 2024-05-09 12:03:04.520477 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Ciekaw pokój na stronie tryhackme poświęcony kryminalistyce cyfrowej systemu ios, na końcu tej ścieżki było proste zadanie.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            iOS Forensics 
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-05-09 <!--start--> </p>           
+
+          <p>Pokój ten w prosty i bardzo ciekawy sposób wprowadza do tematu przeglądania danych z telegonów z systemem IOS, poniżej zamieszczam samo rozwiązanie zadania które było podsumowaniem nauki.</p>
+          <p>Pierwszym zdanie było odnalezienie odbiorcy ostaniego adresata SMS oraz wiadomości. Dane te odczytałem za pomocą narzędzia DB Browser ponieważ dane były w formacie SQLite.</p>
+          <img src="zdj/09.05/recepeintSMS.png" alt="Atak ddos">
+          <p>Następnym zadniem dość analogicznym było znalezienie pierwszego imiona występującego w ksiązce telefonicznej oraz nazwę organizacji z której pochodzi.</p>
+          <img src="zdj/09.05/adress book.png" alt="">
+          <p>Następne zadanie polegało na zanlezieniu zapisanego adresu URL w histori przeglądarki Safari</p>
+          <img src="zdj/09.05/bookmarks.png" alt="">
+          <p>W kolejnym zdaniu miałem znaleść remote_id ostaniego maila co napoczątku było zaskoczeniem bo plik nie wyglądał na format SQLite aczkolwiek po przyglądnięciu się mu w programie HxD okazało się że też jest prosty do otwarca w Browser DB.</p>
+          <img src="zdj/09.05/mail.png" alt="">
+          <p>Ostanie dwa proste zadania polegały na znalezieniu zdjęcia z nazwą pewnej firmy oraz znalezieniu porzuconego pliku cookie.</p>
+          <img src="zdj/09.05/image.png" alt="">
+          <img src="zdj/09.05/cookie.png" alt="">
+          <p> </p>
+          <p>Źródło: https://tryhackme.com/r/room/iosforensics</p>
+          <p>Bardzo interesujący był ten pokój i mam nadzieję że był pewnym wstępem do bezpieczeństwa urządzeń moblinych które wpadło mi w oko ostatnim czasem.</p>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
