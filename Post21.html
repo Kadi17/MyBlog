@@ -39,17 +39,17 @@
             </h1>  
 <p>  <!--start--> 2024-05-05 <!--start--> </p> 
 
-          <p>Standardowo na początku rekonesans celu</p>
-          <img src="zdj/05.05/1.png" alt="Atak ddos">
-          <p>Po przejściu na ukrytą podstronę .ssh odkryłem klucz RSA</p>
-          <img src="zdj/05.05/root flag.png" alt="">
-          <p>A więc jedyne czego brakowało do zalogowania się do SSH to nazwa użytkownika, po ponowym przeszukiwaniu strony w kodzie źródłowym strony znalazłem komenatrz do usera o nazwie Jessie co postanowiłem użyć do zalogowania się na SSH</p>
+          <p>Standardowo na początku rozpocząłem rekonesans celu.</p>
+          <img src="zdj/05.05/1.png" alt="Atak DDoS">
+          <p>Po przejściu na ukrytą podstronę .ssh, odkryłem klucz RSA.</p>
+          <img src="zdj/05.05/root_flag.png" alt="">
+          <p>A więc jedyne, czego brakowało do zalogowania się do SSH, to nazwa użytkownika. Po ponownym przeszukaniu strony w kodzie źródłowym znalazłem komentarz do użytkownika o nazwie "Jessie", co postanowiłem użyć do zalogowania się na SSH.</p>
           <img src="zdj/05.05/jessie.png" alt="">
           <img src="zdj/05.05/4.png" alt="">
-          <p>Za pomocą polecenia find odnalazłem pierwszą flagę.</p>
+          <p>Za pomocą polecenia "find" odnalazłem pierwszą flagę.</p>
           <img src="zdj/05.05/find.png" alt="">
-          <p>A następnie za pomocą sudo -l dowiedziałem się jak mogę odczytać 2 flagę z uprawnieniami roota</p>
-          <img src="zdj/05.05/root flag.png" alt=""> 
+          <p>A następnie, za pomocą "sudo -l", dowiedziałem się, jak mogę odczytać drugą flagę z uprawnieniami roota.</p>
+          <img src="zdj/05.05/root_flag.png" alt="">   
           <p>Źródło: https://tryhackme.com/r/room/wgelctf</p>
         </div>
       </main>

@@ -39,18 +39,18 @@
           </h1> 
 <p>  <!--start--> 2024-05-08 <!--start--> </p>           
 
-          <p>Rekonesans infrastruktury zaczałem od nmapa oraz gobustera na porcie 8081 w którym znajdowało się API do główego portalu.</p>
+          <p>Rekonesans infrastruktury zacząłem od nmap oraz gobuster na porcie 8081, na którym znajdowało się API głównego portalu.</p>
           <img src="zdj/08.05/nmap.png'" alt="Atak ddos">
           <img src="zdj/08.05/gobuster.png" alt="">
-          <p>Na start uwage moją skupiłem na podstronie /auth gdzie należało się zalogować co nawet próbowałem zrobić za pomocą narzędzia hydry aczkolwiek po pewnym czasie odpusciłem.</p>
+          <p>Na start swoją uwagę skupiłem na podstronie /auth, gdzie należało się zalogować. Nawet próbowałem to zrobić za pomocą narzędzia Hydra, jednak po pewnym czasie odpuściłem.</p>
           <img src="zdj/08.05/test auth.png" alt="">
-          <p>Postanowiłema skierować moją uwagę na stronę główną znajdującą się na nietypowym porcie 31331 gdzie po użyciu tym razem narzędzia dirb trafiłem na plik js który sugerował możliwość command injection</p>
+          <p>Postanowiłem skierować swoją uwagę na stronę główną znajdującą się na nietypowym porcie 31331, gdzie po użyciu tym razem narzędzia dirb trafiłem na plik JS, który sugerował możliwość wykonania command injection.</p>
           <img src="zdj/08.05/dirb .png" alt="">
           <img src="zdj/08.05/cmdi.png" alt="">
-          <p>Za pomocą narzędzie Burp Suite udało się potwiedzić te przypuszenia i uzyskać nazwę użytkownika oraz hash który był hasem MD5.</p>
+          <p>Za pomocą narzędzia Burp Suite udało się potwierdzić te przypuszczenia i uzyskać nazwę użytkownika oraz hash, który był hasłem MD5.</p>
           <img src="zdj/08.05/burp.png" alt="">
           <img src="zdj/08.05/hash.png" alt="">
-          <p>Po odszyfrowaniu hasła udało sie zalogować na konto r00ta która przez swoją przynależność do grupy docker pozowliła wyświetlić klucz SSH roota który był flagą.</p>
+          <p>Po odszyfrowaniu hasła udało się zalogować na konto r00t, które ze względu na swoją przynależność do grupy Docker, pozwoliło wyświetlić klucz SSH roota, który był flagą.</p>
           <img src="zdj/08.05/password.png" alt="">
           <img src="zdj/08.05/root ssh.png" alt="">
           <p>Źródło: https://tryhackme.com/r/room/ultratech1</p>

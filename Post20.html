@@ -39,35 +39,35 @@
           </h1> 
 <p>  <!--start--> 2024-04-29 <!--start--> </p>   
 
-          <p>Na początku jak zawsze zacząłem od rekonensanu bezpośrednio strony interentowej oraz narzędziem nmap gdzie skupiłem się na otawrtym porcie 2049</p>
+          <p>Na początku, jak zawsze, zacząłem od rekonesansu bezpośredniej strony internetowej oraz narzędziem nmap, gdzie skupiłem się na otwartym porcie 2049.</p>
           <img src="zdj/29.04/nmap.JPG" alt="">
-          <p>Po wyszukaniu w przęglądarce informacji na temat tego portu natrafiłem na artykuł na stronie HackTricks</p>
+          <p>Po wyszukaniu w przeglądarce informacji na temat tego portu natrafiłem na artykuł na stronie HackTricks.</p>
           <img src="zdj/29.04/web.JPG" alt="">
-          <p>Podożając za stroną dowiedizałem się że jest udostępniony folder do którego da się podłaczyć </p>
+          <p Podążając za stroną, dowiedziałem się, że jest udostępniony folder, do którego da się podłączyć.</p>
           <img src="zdj/29.04/mnt.JPG" alt="">
-          <p>Po utworzeniu użytkownika który byłby wstanie dostać się do zawartości foldera udało sie odczytać login i hasło do serwera ftp</p>
-          <img src="zdj/29.04/add user.JPG" alt="">
+          <p>Po utworzeniu użytkownika, który byłby w stanie dostać się do zawartości foldera, udało się odczytać login i hasło do serwera FTP.</p>
+          <img src="zdj/29.04/add_user.JPG" alt="">
           <img src="zdj/29.04/ftpuser.JPG" alt="">
-          <p>Server ftp zawierał bardzo ciekawe informacje między innymi plik z dużą ilością haseł oraz notatkę od admina która sugerowała żeby uzywać tylko tych haseł o są ciężkie do złamania oraz to że sam używa jednego z tych haseł.</p>
+          <p>Server FTP zawierał bardzo ciekawe informacje, między innymi plik z dużą ilością haseł oraz notatkę od admina, która sugerowała, żeby używać tylko tych haseł, które są ciężkie do złamania, oraz to, że sam używa jednego z tych haseł.</p>
           <img src="zdj/29.04/ftp.JPG" alt="">
           <img src="zdj/29.04/note.JPG" alt="">
-          <p>Po dokładnym przeglądnięciu servera FTP wróciłem do poszukiwań innych rzeczy na samej stronie interentowej. Po utworzeniu konta i zalogowaniu się na nie w narzędiu burp suite odrazu rzucało się w oczy ciasteczko z pewnym Session ID</p>
-          <img src="zdj/29.04/burb.JPG" alt="">
-          <p>Po przeanalizowaniu tego tokena w narzędziu CyberChef oraz CrackStation okazało się że owy token to po prostu login i hasło ukryte pod postacją base64 a samo hasło jeszcze jest zahaszowane za pomocą MD5 </p>
-          <img src="zdj/29.04/burb 2.JPG" alt="">
+          <p>Po dokładnym przejrzeniu serwera FTP, wróciłem do poszukiwań innych rzeczy na samej stronie internetowej. Po utworzeniu konta i zalogowaniu się na nie w narzędziu Burp Suite, od razu rzucało się w oczy ciasteczko z pewnym Session ID.</p>
+          <img src="zdj/29.04/burp.JPG" alt="">
+          <p>Po przeanalizowaniu tego tokena w narzędziu CyberChef oraz CrackStation okazało się, że owy token to po prostu login i hasło ukryte pod postacią base64, a samo hasło jeszcze jest zahaszowane za pomocą MD5.</p>
+          <img src="zdj/29.04/burp_2.JPG" alt="">
           <img src="zdj/29.04/password.JPG" alt="">
-          <p>Plan był prosty, z listy wszystkich haseł stworzyć token za pomocą pythona i atakiem siłowym za pomocą narzędzia intruder w burp suite próbować aż uda się uruchomić sesję admina</p>
-          <img src="zdj/29.04/python script.JPG" alt="">
+          <p>Plan był prosty: z listy wszystkich haseł stworzyć token za pomocą Pythona i atakiem siłowym za pomocą narzędzia Intruder w Burp Suite próbować aż uda się uruchomić sesję admina.</p>
+          <img src="zdj/29.04/python_script.JPG" alt="">
           <img src="zdj/29.04/token2.JPG" alt="">
-          <img src="zdj/29.04/admin panel.JPG" alt="">
-          <p>Za pomocą prostej komendy udało się uruchomić  wyświetlić zawartość pliku config.php gdzie znajdowało sie hasło i login do użytkownika ricka i wyświetlić pierwszą flagę</p>
+          <img src="zdj/29.04/admin_panel.JPG" alt="">
+          <p>Za pomocą prostej komendy udało się uruchomić i wyświetlić zawartość pliku config.php, gdzie znajdowały się hasło i login do użytkownika Ricka, oraz wyświetlić pierwszą flagę.</p>
           <img src="zdj/29.04/rev.JPG" alt="">
           <img src="zdj/29.04/config.JPG" alt="">
-          <img src="zdj/29.04/first flag.JPG" alt="">
-          <p>Następnym zadaniem była eskalacja uprawnień, zacząłem od komendy Sudo -l która pokazała że obecny użytkownik ma uprawnienia roota przy narzędziu apache2, po krótkim googlowaniu natrafiłem na stronę która po kolei pokazywała jak za pomocą apache2 eskalować uprawnienia co pozwoliło na wyświetlenie finalnej flagi.</p>
+          <img src="zdj/29.04/first_flag.JPG" alt="">
+          <p>Następnym zadaniem była eskalacja uprawnień. Zacząłem od komendy "sudo -l", która pokazała, że obecny użytkownik ma uprawnienia roota przy narzędziu apache2. Po krótkim googlowaniu natrafiłem na stronę, która po kolei pokazywała, jak za pomocą apache2 eskalować uprawnienia, co pozwoliło na wyświetlenie finalnej flagi.</p>
           <img src="zdj/29.04/apache.JPG" alt="">
-          <img src="zdj/29.04/c file.JPG" alt="">
-          <img src="zdj/29.04/root flag.JPG" alt=""> 
+          <img src="zdj/29.04/c_file.JPG" alt="">
+          <img src="zdj/29.04/root_flag.JPG" alt=""> 
           <p>Źródło zadania: https://tryhackme.com/r/room/hijack</p> 
 
 
