@@ -1,0 +1,70 @@
+<!-- 2024-06-24 18:01:40.920347 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>roadtothefirstjob</title>
+    <link rel="icon" type="png" href="binarycode.png"/>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fragment+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h2><a href="index.html">roadtothefirstjob</a></h2>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="http://">Contact</a></li>
+        </ul>
+      </header>
+
+    <div style="display: none;">
+    <!--start--> 
+    Prosty poradnik jak zainstalować narzędzie SIEM firmy splunk oraz wgrać logi z komputera.
+    <!--start--> 
+    </div>  
+    <main >
+        <div class="post">
+          <h1 class="title">
+            <!--start--> 
+            Instalacja i wczytanie danych do Splunka
+            <!--start--> 
+          </h1> 
+<p>  <!--start--> 2024-06-24 <!--start--> </p>          
+
+          <p>Splunk SIEM (Security Information and Event Management) to kompleksowe rozwiązanie, które umożliwia zbieranie, analizę i korelację ogromnych ilości danych z różnych źródeł w celu wykrywania incydentów bezpieczeństwa. Dzięki niemu, specjaliści IT mogą w szybki i efektywny sposób identyfikować potencjalne zagrożenia, analizować zachowania sieciowe i podejmować odpowiednie działania naprawcze.</p>
+          <p> </p>
+          <p>Splunka należy pobrać z oficjalnej strony: https://www.splunk.com/en_us/download.html</p>
+          <img src="zdj/24.06.2024/splunk enterprise.png" alt="">
+          <p>Po pobraniu instalatora należy go uruchomić i przechodzić przez poszczególne etapy zgodnie z instrukcjami widocznymi na poniższych zdjęciach.</p> 
+          <img src="zdj/24.06.2024/1.png" alt="">
+          <p>W następnym kroku należy podać nazwę konta oraz hasło, które będą służyły do logowania się do Splunka.</p>
+          <img src="zdj/24.06.2024/2.png" alt="">  
+          <img src="zdj/24.06.2024/3.png" alt="">\
+          <p>Po zakończeniu instalacji zostanie otwarta przeglądarka z lokalnym adresem IP na porcie 8000, gdzie znajduje się interfejs Splunka. W tym miejscu należy zalogować się danymi podanymi wcześniej podczas konfiguracji.</p>  
+          <img src="zdj/24.06.2024/splunk.png" alt="">
+          <p>Jak widać, instalacja przebiegła pomyślnie i wszystko działa zgodnie z oczekiwaniami. Teraz należy zaimportować dane, które będziemy mogli przeglądać i analizować. W tym celu zaimportujemy dane z lokalnej maszyny, czyli komputera, na którym zainstalowaliśmy Splunka.</p>
+          <p>Klikając w zakładkę "Settings", otworzy się nowe okno z wieloma opcjami do wyboru. Wśród nich znajduje się odnośnik "Data Inputs", który należy kliknąć.</p> 
+          <img src="zdj/24.06.2024/data.png" alt=""> 
+          <p>Następnie przechodzimy w zakładkę "Local event log collection".</p>
+          <img src="zdj/24.06.2024/data2.png" alt=""> 
+          <p>Tutaj wybieramy, skąd mają być zbierane logi. W moim przypadku wybieram logi aplikacji, systemowe oraz dotyczące bezpieczeństwa.</p>
+          <img src="zdj/24.06.2024/data3.png" alt=""> 
+          <p>Po zapisaniu tych opcji możemy sprawdzić na głównej stronie wyniki wyszukiwania zapytania *, czyli wszystkich logów.</p>
+          <img src="zdj/24.06.2024/data4.png" alt=""> 
+        </div>
+      </main>
+
+      <footer class="footer">
+        <p>Made by Kacper Mida</p>
+      </footer>
+    </div>
+  </body>
+</html>
