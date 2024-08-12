@@ -28,6 +28,12 @@ header ul {
 header li:hover{
   color: #db3d32;
 }
+ol {
+  list-style: upper-greek !important;
+  font-size: 14px !important;
+  padding-left: 8vh !important;
+  
+}
 
 /* .wrapper {
   margin: 0 20px;
@@ -177,4 +183,5 @@ a span{
   .title{
     font-size: 110%;
   }
+
 }
