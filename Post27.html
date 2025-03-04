@@ -1,4 +1,4 @@
-<!-- 2024-08-08 09:44:35.154086 -->
+ <!-- 2024-08-08 09:44:35.154086 --> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,11 +36,11 @@
             <!--start--> 
             Zeek - Zaawansowane narzędzie do analizy ruchu sieciowego
             <!--start--> 
-          </h1>   
-<p>  <!--start--> 2024-08-08 <!--start--> </p>            
+<p>  <!--start--> 2024-08-08 <!--start--> </p>          </h1> 
 
-          <h3>Co to jest Zeek?</h3> 
-          <p>Zeek to pasywny, open-source'owy analizator ruchu sieciowego. Jest często używany jako monitor bezpieczeństwa sieci (network security monitor) do badania podejrzanych aktywności. Zeek oferuje szeroki wachlarz zadań analizy ruchu, w tym pomiar wydajności i rozwiązywanie problemów.</p>           <p>Główne funkcje Zeek:</p>
+<h3>Co to jest Zeek?</h3> 
+          <p>Zeek to pasywny, open-source'owy analizator ruchu sieciowego. Jest często używany jako monitor bezpieczeństwa sieci (network security monitor) do badania podejrzanych aktywności. Zeek oferuje szeroki wachlarz zadań analizy ruchu, w tym pomiar wydajności i rozwiązywanie problemów.</p>           
+          <p>Główne funkcje Zeek:</p>
           <ol> 
             <li>Obszerne logi: Zeek generuje szczegółowe logi dotyczące aktywności sieciowej, w tym zapisy wszystkich sesji HTTP, żądania DNS, certyfikaty SSL i treści sesji SMTP. Logi są zapisywane w dobrze zorganizowanych plikach TSV lub JSON, które można przetwarzać zewnętrznym oprogramowaniem.</li> 
             <li>Analiza i wykrywanie: Zeek potrafi m.in. wyodrębniać pliki z sesji HTTP, wykrywać malware, raportować wrażliwe wersje oprogramowania, identyfikować popularne aplikacje webowe oraz wykrywać brute-force SSH.</li> 
@@ -83,8 +83,8 @@
             <li> <span style='font-weight: bold;'>signature http-password { ... }:</span> signature: Słowo kluczowe oznaczające początek definicji sygnatury. http-password to nazwa sygnatury, która jest używana do identyfikacji tego konkretnego wzorca.</li>
             <li> <span style='font-weight: bold;'>ip-proto == tcp:</span> ip-proto: Określa protokół IP. W tym przypadku jest ustawiony na tcp, co oznacza, że sygnatura będzie stosowana tylko do połączeń TCP.</li>
             <li> <span style='font-weight: bold;'>dst-port == 80:</span> dst-port: Określa port docelowy. 80 to standardowy port dla HTTP, co oznacza, że sygnatura będzie działać tylko na ruchu HTTP.</li>
-            <li> <span style='font-weight: bold;'>payload /.*password.*/:</span> payload: Określa, że sygnatura przeszukuje dane w ładunku (czyli treści) pakietu. /.*password.*/ to wyrażenie regularne, które dopasowuje wszystkie wystąpienia słowa „password” w ładunku pakietu. Wyrażenie to oznacza, że szukamy tekstu zawierającego „password” w dowolnym kontekście.</li>
-            <li> <span style='font-weight: bold;'>event "Cleartext Password Found!":</span> event: Określa komunikat, który zostanie wygenerowany, gdy sygnatura dopasuje wzorzec. W tym przypadku, gdy tekst „password” zostanie znaleziony w danych przesyłanych na porcie 80 (HTTP), zostanie wygenerowane zdarzenie z komunikatem „Cleartext Password Found!”.</li>
+            <li> <span style='font-weight: bold;'>payload /.*password.*/:</span> payload: Określa, że sygnatura przeszukuje dane w ładunku (czyli treści) pakietu. /.*password.*/ to wyrażenie regularne, które dopasowuje wszystkie wystąpienia słowa password w ładunku pakietu. Wyrażenie to oznacza, że szukamy tekstu zawierającego password w dowolnym kontekście.</li>
+            <li> <span style='font-weight: bold;'>event Cleartext Password Found!:</span> event: Określa komunikat, który zostanie wygenerowany, gdy sygnatura dopasuje wzorzec. W tym przypadku, gdy tekst password zostanie znaleziony w danych przesyłanych na porcie 80 (HTTP), zostanie wygenerowane zdarzenie z komunikatem Cleartext Password Found!.</li>
             
           </ol>
           <p>Znając już działanie sygnatury, możemy przejść do pierwszego zadania, które polega na podaniu adresu IP pierwszego zdarzenia pasującego do naszej sygnatury:</p>
@@ -96,8 +96,8 @@
           <p>Następnie, tak jak na początku tego rozdziału, należy dokończyć pisanie sygnatur, tym razem dla protokołu FTP.</p>
           <img src="zdj/08.08.2024/3.5.PNG" alt="">
           <p>Tym razem w opisie skupie się na tylko jednej kluczowej liniicje w każdej sygnaturze czyli liniicje <span style='font-weight: bold;'>ftp /.*USER.*/</span> oraz <span style='font-weight: bold;'>payload /.*530.*Login.*incorrect.*/</span> </p>
-          <p> <span style='font-weight: bold;'>ftp /.*USER.*/: </span> ftp określa, że sygnatura przeszukuje dane FTP. /.*USER.*/ to wyrażenie regularne, które dopasowuje wszystkie wystąpienia frazy „USER” w komunikatach FTP. Oznacza to, że sygnatura będzie szukać w ładunkach FTP wszelkich odniesień do „USER”, co zazwyczaj odnosi się do prób podania nazwy użytkownika.</p>
-          <p> <span style='font-weight: bold;'>payload /.*530.*Login.*incorrect.*/</span> payload określa, że sygnatura przeszukuje dane w ładunku pakietu. /.*530.*Login.*incorrect.*/ to wyrażenie regularne, które dopasowuje komunikaty zawierające kod błędu 530 oraz tekst „Login incorrect”, typowy dla odpowiedzi serwera FTP na niepoprawne dane logowania. Oznacza to, że sygnatura będzie szukać komunikatów o błędnych próbach logowania.</p>
+          <p> <span style='font-weight: bold;'>ftp /.*USER.*/: </span> ftp określa, że sygnatura przeszukuje dane FTP. /.*USER.*/ to wyrażenie regularne, które dopasowuje wszystkie wystąpienia frazy USER w komunikatach FTP. Oznacza to, że sygnatura będzie szukać w ładunkach FTP wszelkich odniesień do USER, co zazwyczaj odnosi się do prób podania nazwy użytkownika.</p>
+          <p> <span style='font-weight: bold;'>payload /.*530.*Login.*incorrect.*/</span> payload określa, że sygnatura przeszukuje dane w ładunku pakietu. /.*530.*Login.*incorrect.*/ to wyrażenie regularne, które dopasowuje komunikaty zawierające kod błędu 530 oraz tekst Login incorrect, typowy dla odpowiedzi serwera FTP na niepoprawne dane logowania. Oznacza to, że sygnatura będzie szukać komunikatów o błędnych próbach logowania.</p>
           <p>W pierwszym zadaniu należy wypisać liczbę zdarzeń pasujących do naszej nowej sygnatury. W tym przypadku niezbędne będą narzędzia opisane na początku, ponieważ liczba zdarzeń jest znacznie większa.</p>
           <img src="zdj/08.08.2024/3.6.PNG" alt="">
           <p>Ostatnie zadanie w tym rozdziale polega na wypisaniu liczby dopasowań sygnatury ftp-brute. Można to łatwo sprawdzić za pomocą prostego narzędzia grep.</p>
@@ -122,7 +122,7 @@
             <p>options$host_name: Odczytuje wartość opcji DHCP host_name z obiektu options. host_name to opcja DHCP, która często zawiera nazwę hosta klienta.</p>
             </ol>
           </ol>
-          <p>Pierwsze zadanie w tym rozdziale polega na znalezieniu wartości domeny dla hosta „vinlap01”. Najpierw należy uruchomić skrypt na pliku PCAP, a następnie w pliku dhcp.log znaleźć informacje dotyczące hosta „vinlap01” za pomocą narzędzia grep.</p>
+          <p>Pierwsze zadanie w tym rozdziale polega na znalezieniu wartości domeny dla hosta vinlap01. Najpierw należy uruchomić skrypt na pliku PCAP, a następnie w pliku dhcp.log znaleźć informacje dotyczące hosta vinlap01 za pomocą narzędzia grep.</p>
           <img src="zdj/08.08.2024/4.1.PNG" alt="">
           <p>Drugie zadanie polega na określeniu liczby zidentyfikowanych unikalnych nazw hostów. Ponownie można użyć narzędzi takich jak sort, uniq oraz wc -l. Aby uzyskać pełny wynik, należy również usunąć linie zawierające myślnik, korzystając z komendy grep -v '^-'.</p>
           <img src="zdj/08.08.2024/4.2.PNG" alt="">
@@ -135,16 +135,16 @@
           <img src="zdj/08.08.2024/5.6.PNG" alt="">
           <ol>
             <li>Wyświetla nagłówek: Skrypt zaczyna od wydrukowania serii znaków #, co tworzy wizualny nagłówek w konsoli, ułatwiający oddzielenie danych dotyczących różnych połączeń.</li> 
-            <li>Komunikat o nowym połączeniu: Następnie skrypt wyświetla puste linie oraz komunikat "New Connection Found!", informując użytkownika, że Zeek wykrył nowe połączenie.</li>
+            <li>Komunikat o nowym połączeniu: Następnie skrypt wyświetla puste linie oraz komunikat New Connection Found!, informując użytkownika, że Zeek wykrył nowe połączenie.</li>
             <li>Wyświetlanie informacji o połączeniu: Adres źródłowy i port: Skrypt drukuje adres IP oraz port komputera, który zainicjował połączenie (host źródłowy). Adres docelowy i port: Skrypt drukuje również adres IP oraz port komputera docelowego, z którym próbuje nawiązać połączenie (host docelowy).</li>
           </ol>
           <p>W pierwszym zadaniu należy użyć wyżej wymienionego skryptu, a następnie za pomocą narzędzia grep wypisać nowe połączenia i narzędziem wc -l zliczyć, ile tych nowych połączeń nastąpiło.</p> 
           <img src="zdj/08.08.2024/5.1.PNG" alt="">
           <p><img src="zdj/08.08.2024/5.7.PNG" alt=""></p>
-          <p>Skrypt monitoruje ruch sieciowy pod kątem dopasowania do sygnatury o identyfikatorze "ftp-admin". Gdy Zeek wykryje ruch zgodny z tą sygnaturą, skrypt wyświetla komunikat informujący o trafieniu. W ten sposób można łatwo zidentyfikować specyficzne wzorce w sieci, takie jak próby logowania się użytkownika "admin" do serwera FTP.</p>
+          <p>Skrypt monitoruje ruch sieciowy pod kątem dopasowania do sygnatury o identyfikatorze ftp-admin. Gdy Zeek wykryje ruch zgodny z tą sygnaturą, skrypt wyświetla komunikat informujący o trafieniu. W ten sposób można łatwo zidentyfikować specyficzne wzorce w sieci, takie jak próby logowania się użytkownika admin do serwera FTP.</p>
           <p>W tym zadaniu należy użyć skryptu 201.zeek oraz sygnatury ftp-signature.sig, aby zidentyfikować trafienia zgodne z sygnaturą. Po uruchomieniu skryptu i przetworzeniu pliku PCAP, można zliczyć liczbę wszystkich trafień sygnatury za pomocą polecenia wc -l, które policzy linie w wygenerowanym pliku.</p> 
           <img src="zdj/08.08.2024/5.2.PNG" alt="">
-          <p>W następnym zadaniu trzeba ustalić, ile razy wykryto nazwę użytkownika "administrator". Aby to zrobić, wystarczy użyć polecenia grep, aby wyszukać słowo kluczowe "administrator" w wcześniej utworzonym pliku signatures.log. W ten sposób można łatwo policzyć, ile razy to słowo pojawia się w wynikach.</p> 
+          <p>W następnym zadaniu trzeba ustalić, ile razy wykryto nazwę użytkownika administrator. Aby to zrobić, wystarczy użyć polecenia grep, aby wyszukać słowo kluczowe administrator w wcześniej utworzonym pliku signatures.log. W ten sposób można łatwo policzyć, ile razy to słowo pojawia się w wynikach.</p> 
           <img src="zdj/08.08.2024/5.3" alt="">
           <p>W kolejnym zadaniu, aby przeanalizować plik ftp.pcap z użyciem wszystkich lokalnych skryptów, wystarczy dodać wyrażenie local do komendy uruchamiającej Zeeka. Następnie użyłem narzędzi grep .zeek oraz wc -l, aby policzyć łączną liczbę załadowanych skryptów, przeszukując plik loaded_scripts.log.</p>
           <img src="zdj/08.08.2024/5.4.PNG" alt="">
@@ -158,7 +158,7 @@
           <img src="zdj/08.08.2024/6.1.PNG" alt="">
           <p>W kolejnym zadaniu należy przeanalizować plik http.log, aby znaleźć nazwę pobranego pliku .exe. W tym celu wystarczy użyć narzędzia zeek-cut, które umożliwia szybkie wyodrębnienie odpowiednich informacji z pliku logów. Zadanie polega na dokładnym przeszukaniu logów HTTP, aby zidentyfikować nazwę pobranego pliku wykonywalnego.</p>
           <img src="zdj/08.08.2024/6.2.PNG" alt="">
-          <p>W kolejnym zadaniu będziemy korzystać z frameworku „File Analysis”. Nie wszystkie funkcje frameworków są przeznaczone do użycia w trybie CLI. W tym zadaniu użyjemy gotowej funkcji z frameworku „File Analysis”, która generuje hashe MD5, SHA1 oraz SHA256 dla wykrytych plików.</p>
+          <p>W kolejnym zadaniu będziemy korzystać z frameworku File Analysis. Nie wszystkie funkcje frameworków są przeznaczone do użycia w trybie CLI. W tym zadaniu użyjemy gotowej funkcji z frameworku File Analysis, która generuje hashe MD5, SHA1 oraz SHA256 dla wykrytych plików.</p>
           <p>W tym zadaniu należy zbadać plik case1.pcap za pomocą skryptu hash-demo.zeek. Po przetworzeniu danych należy przeanalizować plik files.log w celu odnalezienia wartości hash MD5 pobranego pliku .exe. Aby to zrobić, ponownie użyjemy narzędzia zeek-cut, aby wyodrębnić odpowiedni hash MD5 oraz pole mime_type, które wskaże, który z hashy jest przypisany do pliku wykonywalnego (.exe).</p>
           <img src="zdj/08.08.2024/6.3.PNG" alt="">
           <p>Najpierw uruchom Zeeka komendą zeek -C -r case1.pcap file-extract-demo.zeek, a następnie przejdź do nowo utworzonego katalogu extract_files. Aby zidentyfikować, który plik jest tekstowy, użyj komendy file * | nl. Komenda file sprawdzi typy plików, * oznacza wszystkie pliki w katalogu, a nl ponumeruje wyniki. Po wykonaniu tej komendy zobaczymy, że pierwszy plik to ten, który nas interesuje. Teraz wystarczy otworzyć plik przy pomocy komendy cat i uzyskamy naszą odpowiedź.</p>
